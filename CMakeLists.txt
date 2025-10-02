@@ -36,6 +36,15 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 	sfml-audio
 )
 
+add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
+	COMMAND ${CMAKE_COMMAND} -E copy_directory
+	${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:${PROJECT_NAME}>/assets
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    VS_DEBUGGER_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/$<CONFIG>"
+)
+
 if(MSVC)
-    target_link_options(FlappyBird PRIVATE "/SUBSYSTEM:WINDOWS")
+    target_link_options(${PROJECT_NAME} PRIVATE "/SUBSYSTEM:WINDOWS")
 endif()

@@ -1,7 +1,7 @@
 #include "GameLevel.h"
 
 GameLevel::GameLevel(const sf::Vector2u& windowSize) :
-	font("arial.ttf"),
+	font("assets/arial.ttf"),
 	scoreText(font)
 {
 	scoreText.setString("SCORE: " + std::to_string(score));
