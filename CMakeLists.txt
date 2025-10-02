@@ -25,7 +25,16 @@ set_target_properties(sfml-window PROPERTIES FOLDER "SFML/SFML")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -MP")
 
 set(SRC
-	FlappyBird/main.cpp
+	src/GameApp.cpp
+	src/GameApp.h
+	src/GameLevel.cpp
+	src/GameLevel.h
+	src/GameWindow.cpp
+	src/GameWindow.h
+	src/Drawable.h
+	src/KeyboardBinding.cpp
+	src/KeyboardBinding.h
+	src/main.cpp
 )
 	
 add_executable(${PROJECT_NAME} ${SRC})
@@ -40,3 +49,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
 	sfml-graphics
 	sfml-audio
 )
+
+if(MSVC)
+    target_link_options(FlappyBird PRIVATE "/SUBSYSTEM:WINDOWS")
+endif()
