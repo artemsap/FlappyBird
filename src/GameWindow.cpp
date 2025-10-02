@@ -19,7 +19,7 @@ void GameWindow::Draw()
 	{
 		window.handleEvents(onCloseLambda, keyboardBindings);
 
-		window.clear(backgroundColor);
+		window.clear();
 		level.Draw(window);
 		window.display();
 

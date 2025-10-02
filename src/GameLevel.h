@@ -12,6 +12,8 @@ public:
 private:
 	const sf::Font font;
 	sf::Text scoreText;
+	sf::Texture backGroundTexture;
+	sf::Sprite backGroundSprite;
 
 	int score = 0;
 	bool lose = false;

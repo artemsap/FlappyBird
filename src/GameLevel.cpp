@@ -2,7 +2,9 @@
 
 GameLevel::GameLevel(const sf::Vector2u& windowSize) :
 	font("assets/arial.ttf"),
-	scoreText(font)
+	scoreText(font),
+	backGroundTexture("assets/background.jpg"),
+	backGroundSprite(backGroundTexture)
 {
 	scoreText.setString("SCORE: " + std::to_string(score));
 	scoreText.setCharacterSize(24);
@@ -11,6 +13,7 @@ GameLevel::GameLevel(const sf::Vector2u& windowSize) :
 
 void GameLevel::Draw(sf::RenderWindow& window)
 {
+	window.draw(backGroundSprite);
 	window.draw(scoreText);
 }
 
