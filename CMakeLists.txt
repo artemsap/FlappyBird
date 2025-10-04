@@ -11,15 +11,19 @@ add_subdirectory(ThirdParty) #import libs here
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -MP")
 
 set(SRC
-	src/GameApp.cpp
-	src/GameApp.h
-	src/GameLevel.cpp
-	src/GameLevel.h
-	src/GameWindow.cpp
-	src/GameWindow.h
+	src/App.cpp
+	src/App.h
+	src/Level.cpp
+	src/Level.h
+	src/Window.cpp
+	src/Window.h
 	src/Drawable.h
 	src/KeyboardBinding.cpp
 	src/KeyboardBinding.h
+	src/Bird.cpp	
+	src/Bird.h
+	src/Pipe.cpp	
+	src/Pipe.h
 	src/main.cpp
 )
 	

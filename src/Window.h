@@ -3,9 +3,9 @@
 #include <SFML/Audio.hpp>
 
 #include "KeyboardBinding.h"
-#include "GameLevel.h"
+#include "Level.h"
 
-class GameWindow
+class Window
 {
 public:
 	struct WindowSettings
@@ -16,7 +16,7 @@ public:
 	};
 
 public:
-	GameWindow(const WindowSettings& windowSettings);
+	Window(const WindowSettings& windowSettings);
 	void Draw();
 
 private:
@@ -26,5 +26,5 @@ private:
 	sf::RenderWindow window;
 
 	KeyboardBinding keyboardBindings;
-	GameLevel level;
+	Level level;
 };

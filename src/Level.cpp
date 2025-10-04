@@ -1,6 +1,6 @@
-#include "GameLevel.h"
+#include "Level.h"
 
-GameLevel::GameLevel(const sf::Vector2u& windowSize) :
+Level::Level(const sf::Vector2u& windowSize) :
 	font("assets/arial.ttf"),
 	scoreText(font),
 	backGroundTexture("assets/background.jpg"),
@@ -11,13 +11,13 @@ GameLevel::GameLevel(const sf::Vector2u& windowSize) :
 	scoreText.setFillColor(sf::Color::Black);	
 }
 
-void GameLevel::Draw(sf::RenderWindow& window)
+void Level::Draw(sf::RenderWindow& window)
 {
 	window.draw(backGroundSprite);
 	window.draw(scoreText);
 }
 
-bool GameLevel::IsPlayerLose() const
+bool Level::IsPlayerLose() const
 {
 	return lose;
 }

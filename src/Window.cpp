@@ -1,14 +1,14 @@
-#include "GameWindow.h"
+#include "Window.h"
 #include <iostream>
 
-GameWindow::GameWindow(const WindowSettings& windowSettings)
+Window::Window(const WindowSettings& windowSettings)
 	: window(sf::VideoMode(sf::Vector2u{ windowSettings.width, windowSettings.height }), windowSettings.title)
 	, level(window.getSize())
 {
 	bindKeys();
 }
 
-void GameWindow::Draw()
+void Window::Draw()
 {
 	const auto onCloseLambda = [&](const sf::Event::Closed&)
 	{
@@ -30,7 +30,7 @@ void GameWindow::Draw()
 	}
 }
 
-void GameWindow::bindKeys()
+void Window::bindKeys()
 {
 	//keyboardBindings.bind(sf::Keyboard::Scancode::W, [&snake]()	{ snake.ChangeHeadDirection(GameSnake::Direction::UP); });
 }
