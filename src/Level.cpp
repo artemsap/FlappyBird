@@ -1,20 +1,18 @@
 #include "Level.h"
+#include "AssetManager.h"
 
 Level::Level(const sf::Vector2u& windowSize) :
-	font("assets/arial.ttf"),
-	scoreText(font),
-	backGroundTexture("assets/background.jpg"),
+	backGroundTexture(AssetManager::GetAssetTexture("backGroundDay", true)),
 	backGroundSprite(backGroundTexture)
 {
-	scoreText.setString("SCORE: " + std::to_string(score));
-	scoreText.setCharacterSize(24);
-	scoreText.setFillColor(sf::Color::Black);	
+	const auto& textureSize = backGroundTexture.getSize();
+	backGroundSprite.setScale(sf::Vector2f{ static_cast<float>(windowSize.y) / textureSize.y, static_cast<float>(windowSize.y) / textureSize.y });
+	backGroundSprite.setTextureRect(sf::IntRect(sf::Vector2i{0,0}, sf::Vector2i(windowSize)));
 }
 
 void Level::Draw(sf::RenderWindow& window)
 {
 	window.draw(backGroundSprite);
-	window.draw(scoreText);
 }
 
 bool Level::IsPlayerLose() const

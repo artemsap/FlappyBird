@@ -25,6 +25,8 @@ set(SRC
 	src/Pipe.cpp	
 	src/Pipe.h
 	src/main.cpp
+	src/AssetManager.h
+	src/AssetManager.cpp
 )
 	
 add_executable(${PROJECT_NAME} ${SRC})
